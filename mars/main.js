@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { get_mars_weather } from './apiFunctions';
 import backgroundPicure from './pictures/space.jpg';
-import marstexture from './pictures/mars.jpg'
+import marsSurface from './pictures/mars.jpg'
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -17,20 +17,19 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
 camera.position.setZ(30);
-
 renderer.render( scene, camera );
 
-//objects
+//planet objects
 // const geometry = new THREE.SphereGeometry(10, 40, 18);
-const material = new THREE.MeshStandardMaterial( { color: 0xCC3333 });
-const marsPng = new THREE.TextureLoader().load(marstexture)
-const sphere = new THREE.Mesh( 
+// const material = new THREE.MeshStandardMaterial( { color: 0xCC3333 });
+const marsTexture = new THREE.TextureLoader().load(marsSurface)
+const mars = new THREE.Mesh( 
   new THREE.SphereGeometry(3, 32, 32),
-  new THREE.MeshBasicMaterial( { map: marsPng } )
+  new THREE.MeshBasicMaterial( { map: marsTexture } )
   );
 
 //scene
-scene.add(sphere)
+scene.add(mars)
 
 const pointLight = new THREE.PointLight(0xffffff)
 const lightHelper = new THREE.PointLightHelper(pointLight)
