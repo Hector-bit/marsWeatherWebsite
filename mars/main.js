@@ -28,9 +28,9 @@ const mars = new THREE.Mesh(
   new THREE.MeshBasicMaterial( { map: marsTexture } )
   );
 
-//scene
 scene.add(mars)
 
+//scene and lights
 const pointLight = new THREE.PointLight(0xffffff)
 const lightHelper = new THREE.PointLightHelper(pointLight)
 scene.add(lightHelper)
@@ -49,9 +49,9 @@ scene.background = spaceTexture
 function animate() {
   requestAnimationFrame( animate )
 
-  sphere.rotation.x += 0.01;
-  sphere.rotation.y += 0.005;
-  sphere.rotation.z += 0.01;
+  mars.rotation.x += 0.001;
+  mars.rotation.y += 0.005;
+  mars.rotation.z += 0.001;
 
   controls.update()
 

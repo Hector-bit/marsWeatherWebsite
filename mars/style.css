@@ -1,11 +1,11 @@
-#app {
+/* #app {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
 }
 
 .weatherReportBox {
-  border: 2px red;
-}
+  border: solid red 2px;
+} */
 
 canvas {
   position: fixed;
