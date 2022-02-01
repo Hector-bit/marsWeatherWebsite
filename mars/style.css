@@ -1,11 +1,13 @@
-/* #app {
+#app {
+  font: "Roboto";
+  color: white;
   position: absolute;
   z-index: 1;
 }
 
 .weatherReportBox {
-  border: solid red 2px;
-} */
+  padding: 2%;
+}
 
 canvas {
   position: fixed;

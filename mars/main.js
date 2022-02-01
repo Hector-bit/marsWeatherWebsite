@@ -1,14 +1,11 @@
 import './style.css'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { get_mars_weather } from './apiFunctions';
 import backgroundPicure from './pictures/space.jpg';
 import marsSurface from './pictures/mars.jpg'
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const marsData = get_mars_weather();
-console.log(marsData);
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
@@ -16,18 +13,16 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
-camera.position.setZ(30);
+camera.position.setX(20);
 renderer.render( scene, camera );
 
 //planet objects
-// const geometry = new THREE.SphereGeometry(10, 40, 18);
-// const material = new THREE.MeshStandardMaterial( { color: 0xCC3333 });
 const marsTexture = new THREE.TextureLoader().load(marsSurface)
 const mars = new THREE.Mesh( 
   new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshBasicMaterial( { map: marsTexture } )
   );
-
+// mars.position.x = -10
 scene.add(mars)
 
 //scene and lights
