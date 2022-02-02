@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// import * as axios from './node_modules/axios/index.js';
 //quick function to collect information about mars weather
 
 const get_mars_weather = () => {
@@ -8,7 +8,7 @@ const get_mars_weather = () => {
         .then((res) => {
             console.log(res.data, 'heres the response')
             document.getElementById("marsWeatherSol").innerHTML = `Sol: ${res.data.sol}`;
-            document.getElementById("marsWeatherMaxtemp").innerHTML = `Max Temperature: ${res.data.max_temp}`
+            document.getElementById("marsWeatherMaxtemp").innerHTML = `Max Temperature: ${res.data.max_temp}c`
             document.getElementById("marsWeatherMintemp").innerHTML = `Min Temperature: ${res.data.min_temp}c`
             document.getElementById("marsWeatherPressure").innerHTML = `Pressure ${res.data.sol} Pa`
             document.getElementById("marsWeatherSunrise").innerHTML = `Sunrise: ${res.data.sunrise}`
