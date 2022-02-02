@@ -14,9 +14,12 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
 camera.position.setX(20);
+// camera.position.setY(20);
 renderer.render( scene, camera );
 
 //planet objects
+// const geometry = new THREE.SphereGeometry(10, 40, 18);
+// const material = new THREE.MeshStandardMaterial( { color: 0xCC3333 });
 const marsTexture = new THREE.TextureLoader().load(marsSurface)
 const mars = new THREE.Mesh( 
   new THREE.SphereGeometry(3, 32, 32),
@@ -27,8 +30,8 @@ scene.add(mars)
 
 //scene and lights
 const pointLight = new THREE.PointLight(0xffffff)
-// const lightHelper = new THREE.PointLightHelper(pointLight)
-// scene.add(lightHelper)
+const lightHelper = new THREE.PointLightHelper(pointLight)
+scene.add(lightHelper)
 
 const controls = new OrbitControls(camera, renderer.domElement);
 const ambientLight = new THREE.AmbientLight(0xffffff);
