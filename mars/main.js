@@ -1,8 +1,8 @@
 import './style.css'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import backgroundPicure from './pictures/space.jpg';
-import marsSurface from './pictures/mars.jpg'
+import backgroundPicure from '/space.jpg';
+import marsSurface from '/mars.jpg'
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
