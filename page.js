@@ -1,4 +1,4 @@
-import * as axios from './node_modules/axios';
+import * as axios from 'axios';
 //quick function to collect information about mars weather
 
 const get_mars_weather = () => {
